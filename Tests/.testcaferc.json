@@ -1,0 +1,40 @@
+{
+  "browsers": ["chrome:headless"],
+  "hostname": "localhost",
+  "disablePageCaching": false,
+  "src": "Scenarios/**/*.tests.ts",
+  "reporter": [
+    {
+      "name": "spec"
+    },
+    {
+      "name": "JUnit",
+      "output": "Reports/JUnitReport.xml"
+    }
+  ],
+  "concurrency": 5,
+  "screenshots": {
+    "path": "./screenshots",
+    "fullPage": true,
+    "thumbnails": false,
+    "takeOnFails": true,
+    "pathPattern": "${DATE}/${TIME}/test-${TEST_INDEX}_${FILE_INDEX}.png",
+    "pathPatternOnFails": "${DATE}/${TIME}/FailedTests/test-${TEST_INDEX}_${FILE_INDEX}.png"
+  },
+  "skipJsErrors": true,
+  "skipUncaughtErrors": true,
+  "selectorTimeout": 5000,
+  "assertionTimeout": 10000,
+  "pageLoadTimeout": 20000,
+  "speed": 1,
+  "retryTestPages": true,
+  "developmentMode": true,
+  "compilerOptions": {
+    "typescript": {
+      "options": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true
+      }
+    }
+  }
+}

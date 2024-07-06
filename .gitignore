@@ -1,0 +1,6 @@
+node_modules
+screenshots
+Reports
+yarn.lock
+/.gitattributes
+/Tests/Scenarios/scrap.ts

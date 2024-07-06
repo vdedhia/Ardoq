@@ -1,0 +1,16 @@
+{
+  "name": "e2e-tests",
+  "scripts": {
+    "test": "testcafe"
+  },
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "testcafe": "^3.5.0",
+    "testcafe-react-selectors": "^5.0.2"
+  },
+  "devDependencies": {
+    "testcafe": "^3.5.0",
+    "testcafe-reporter-junit": "^3.0.2"
+  }
+}
