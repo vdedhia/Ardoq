@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite name="TestCafe Tests: Chrome 126.0.0.0 / Windows 11, Chrome 126.0.0.0 / Windows 11, Chrome 126.0.0.0 / Windows 11, Chrome 126.0.0.0 / Windows 11, Chrome 126.0.0.0 / Windows 11, Microsoft Edge 126.0.2592.87 / Windows 11, Microsoft Edge 126.0.2592.87 / Windows 11, Microsoft Edge 126.0.2592.87 / Windows 11, Microsoft Edge 126.0.2592.87 / Windows 11, Microsoft Edge 126.0.2592.87 / Windows 11" tests="5" failures="0" skipped="0" errors="0" time="57.62" timestamp="Sat, 06 Jul 2024 23:08:13 GMT" >
+  <testcase classname="Testing Ardoq scenarios" name="Verify User is able to load the landing page" time="11.978">
+  </testcase>
+  <testcase classname="Testing Ardoq scenarios" name="Verify User is able to fill up Account creation form" time="22.222">
+  </testcase>
+  <testcase classname="Testing Ardoq scenarios" name="Verify correct User is able to login into the Account recently created" time="22.314">
+  </testcase>
+  <testcase classname="Testing Ardoq scenarios" name="Verify User is able to place the order" time="50.875">
+  </testcase>
+  <testcase classname="Testing Ardoq scenarios" name="Verify correct order is placed" time="26.33">
+  </testcase>
+</testsuite>
