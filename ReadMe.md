@@ -36,3 +36,8 @@
 
 - `testcafe chrome .\Tests\Scenarios\Ardoq.tests.ts` --> To run all tests from specific file in Chrome
 - `testcafe .\Tests\Scenarios\Ardoq.tests.ts` --> To run all tests from specific file in Headless mode
+
+## Test report
+
+Test report is automatically generated at the end of the run and is saved in Reports folder.
+During run time you can view the latest progress in the terminal.

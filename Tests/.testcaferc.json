@@ -1,5 +1,5 @@
 {
-  "browsers": ["chrome:headless"],
+  "browsers": ["chrome:headless", "edge:headless"],
   "hostname": "localhost",
   "disablePageCaching": false,
   "src": "Scenarios/**/*.tests.ts",
@@ -9,7 +9,7 @@
     },
     {
       "name": "JUnit",
-      "output": "Reports/JUnitReport.xml"
+      "output": "Reports/TestReport.xml"
     }
   ],
   "concurrency": 5,

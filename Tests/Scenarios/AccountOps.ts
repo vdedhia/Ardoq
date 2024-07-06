@@ -2,7 +2,7 @@ import { t } from "testcafe";
 import * as MenuItemSelectors from "./Components";
 
 const TestUserDetails = {
-  Email: "a@aa.com",
+  Email: "a@bb.ccc",
   Password: "Test@123",
 };
 
@@ -48,7 +48,8 @@ export async function DoCheckout() {
       .click(MenuItemSelectors.dropdownCountry)
       .click(MenuItemSelectors.CountryOption.withExactText("Norway"))
       .typeText(MenuItemSelectors.inputZipCode, "0111")
-      .typeText(MenuItemSelectors.inputPhoneNumber, "40440440");
+      .typeText(MenuItemSelectors.inputPhoneNumber, "40440440")
+      .wait(2000);
   }
 
   await t
