@@ -1,6 +1,6 @@
-import { RequestLogger } from "testcafe";
+import { RequestLogger, Selector } from "testcafe";
 import { MagnetoHomePage } from "../Helpers/URLs";
-import { CreateAccount, DoCheckout, TestUserLogin } from "./AccountOps";
+import { CreateAccount, DoCheckout, GoToMyAccount, TestUserLogin } from "./AccountOps";
 import * as MenuItemSelectors from "./Components";
 
 const networkLogger = RequestLogger("https://magento.softwaretestingboard.com/checkout/onepage/success/", {
@@ -55,14 +55,12 @@ test("Verify User is able to place the order", async (t) => {
     .hover(MenuItemSelectors.ShoppingMenuItems.Men)
     .hover(MenuItemSelectors.ShoppingMenuSubItems.Tops)
     .click(MenuItemSelectors.TopsMenuSubItems.Jackets)
-    .scroll("bottom")
-    .hover(JacketToBasket)
+    .hover(Selector("img").withAttribute("alt", "Beaumont Summit Kit"))
     .click(JacketToBasket.parent(1).child(3).child(0).child().child().withExactText("L"))
     .click(JacketToBasket.parent(1).child(3).child(1).child().child().withAttribute("option-label", "Red"))
-    .hover(JacketToBasket)
-    .click(MenuItemSelectors.buttonAddToCart)
+    .click(JacketToBasket.parent(1).child(4).child().child())
     .wait(2000)
-    .expect(MenuItemSelectors.msgSuccess.exists)
+    .expect(MenuItemSelectors.msgSuccess.visible)
     .ok();
 
   //Add Tee to basket
@@ -70,14 +68,11 @@ test("Verify User is able to place the order", async (t) => {
     .hover(MenuItemSelectors.ShoppingMenuItems.Men)
     .hover(MenuItemSelectors.ShoppingMenuSubItems.Tops)
     .click(MenuItemSelectors.TopsMenuSubItems.Tees)
-    .scroll("bottom")
-    .hover(TeeToBasket)
     .click(TeeToBasket.parent(1).child(3).child(0).child().child().withExactText("L"))
     .click(TeeToBasket.parent(1).child(3).child(1).child().child().withAttribute("option-label", "Black"))
-    .hover(TeeToBasket)
     .click(MenuItemSelectors.buttonAddToCart)
     .wait(2000)
-    .expect(MenuItemSelectors.msgSuccess.exists)
+    .expect(MenuItemSelectors.msgSuccess.visible)
     .ok()
     .click(MenuItemSelectors.buttonCart)
     .click(MenuItemSelectors.buttonCheckout);
@@ -89,9 +84,9 @@ test("Verify User is able to place the order", async (t) => {
 
 test("Verify correct order is placed", async (t) => {
   await TestUserLogin();
+  await GoToMyAccount();
 
   await t
-    .click(MenuItemSelectors.LinkMenu.withExactText("My Orders"))
     .click(MenuItemSelectors.linkViewOrder)
     .expect(MenuItemSelectors.textOrder.exists)
     .ok()

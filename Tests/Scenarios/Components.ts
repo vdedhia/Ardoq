@@ -5,7 +5,7 @@ export const LinkCreateAccount = Selector("a").withExactText("Create an Account"
 export const linkSignIn = Selector("a").withExactText("Sign In");
 
 //Side menu items
-export const LinkMenu = Selector("ul").withAttribute("class", "nav items");
+export const LinkMenu = Selector("li").withAttribute("class", "nav item");
 
 //Shopping Menu
 export const LinkShoppingMenu = Selector("ul").withAttribute(
@@ -91,5 +91,13 @@ export const tableOrder = Selector("table");
 export const linkViewOrder = Selector("a").withExactText("View Order");
 export const textOrder = textHeading;
 export const textOrderStatus = Selector("span").withAttribute("class", "order-status");
-export const textProductPrice = Selector("span").withAttribute("class", "price");
+export const textProductPrice = Selector("td").withAttribute("class", "col price");
 export const textGrandTotal = Selector("tr").withAttribute("class", "grand_total");
+
+//User Menu
+export const UserMenuOptions = {
+  root: Selector("button").withAttribute("class", "action switch"),
+  linkMyAccount: Selector("a").withExactText("My Account"),
+  linkMyWishList: Selector("a").withExactText("My Wish List"),
+  linkSignOut: Selector("a").withExactText("Sign Out"),
+};

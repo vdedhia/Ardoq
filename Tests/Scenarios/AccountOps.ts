@@ -33,6 +33,13 @@ export async function TestUserLogin() {
     .click(MenuItemSelectors.buttonSignIn);
 }
 
+export async function GoToMyAccount() {
+  await t
+    .click(MenuItemSelectors.UserMenuOptions.root)
+    .click(MenuItemSelectors.UserMenuOptions.linkMyAccount)
+    .click(MenuItemSelectors.LinkMenu.withExactText("My Orders"));
+}
+
 export async function DoCheckout() {
   if (await MenuItemSelectors.inputAddress.visible) {
     await t
